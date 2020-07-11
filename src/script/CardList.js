@@ -1,6 +1,6 @@
 'use strict';
 
-class CardList {
+export default class CardList {
 
   constructor(container, createCard) {
     this.container = container;

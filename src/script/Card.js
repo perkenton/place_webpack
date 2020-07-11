@@ -1,6 +1,6 @@
 'use strict';
 
-class Card {
+export default class Card {
   constructor(objCard) {
     this.placeName = objCard.placeName;
     this.placeLink = objCard.placeLink;
@@ -51,19 +51,6 @@ class Card {
   }
 
   _addListeners = () => {
-     // - С замечание согласен, но не понял какие элементы искать в конструкторе. Ведь они добавляются на каждую карточку
-     // отдельно при ее создании и ищутся относительно нового элемента (карточки) и до этого в разметке их нет.
-
-     /* В таком случае проще всего будет найти данные элементы в методе create, например таким образом:
-     this.likeButton = this.newCard.querySelector('.place-card__like-icon'); и использовать likeButton в методах
-     _addListeners и _removeListeners. Также для других элементов соответственно */
-
-     /** REVIEW: Можно лучше:
-     * 
-     * Поиск элементов с классами .place-card__like-icon, .place-card__delete-icon place-card__image и  происходит дважды -
-     * в методах _addListeners и _removeListeners, лучше всего вынести поиск данных элементов в конструктор класса,
-     * потом использовать в нужных методах. Таким образом код будет выглядеть чище и аккуратнее. 
-     */
     this.newCard.querySelector('.place-card__like-icon').addEventListener('click', this._like);
     this.newCard.querySelector('.place-card__delete-icon').addEventListener('click', this._delete);
     this.newCard.querySelector('.place-card__image').addEventListener('click', this._openImage);
