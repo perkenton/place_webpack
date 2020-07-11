@@ -1,0 +1,27 @@
+.user-info__edit-button {
+  font-size: 12px;
+  line-height: 15px;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  display: block;
+  cursor: pointer;
+  margin-top: 24px;
+  padding: .9px 7.1px;
+  transition: .3s linear;
+}
+
+.user-info__edit-button:hover {
+  color: #000;
+  background-color: #fff;
+}
+
+.user-info__edit-button:focus {
+  outline-color: greenyellow;
+}
+
+@media screen and (max-width: 980px) {
+  .user-info__edit-button {
+    margin: 24px auto 4px;
+  }
+}
