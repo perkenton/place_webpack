@@ -1,14 +1,14 @@
 'use strict';
 
-class Api {
+export default class Api {
   constructor(config) {
-    this.url = config.url;
     this.headers = config.headers;
+    this.serverUrl = config.serverUrl;
   }
 
 
   _fetchPromise = (partOfUrl) => {
-    return fetch(`${this.url}${partOfUrl}`, {
+    return fetch(`${this.serverUrl}${partOfUrl}`, {
       headers: this.headers
     })
 
@@ -31,7 +31,7 @@ class Api {
   }
 
   editUserInfo(profileName, profileAbout) {
-    return fetch(`${this.url}users/me`, {
+    return fetch(`${this.serverUrl}users/me`, {
       method: 'PATCH',
       headers: this.headers,
       body: JSON.stringify({

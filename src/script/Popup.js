@@ -1,6 +1,6 @@
 'use strict';
 
-class Popup {
+export default class Popup {
 
   open = (popupName) => {
     this.popup = popupName;
